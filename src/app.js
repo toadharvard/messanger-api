@@ -8,13 +8,9 @@ const path = require('path');
 const routes = require('./routes');
 const app = express();
 const server = http.createServer(app);
-const io = require('socket.io')(server, {
-    cors: { origin: 'http://localhost:8080' },
-});
 
 const PORT = process.env.PORT || 3000;
 
-app.set('io', io);
 app.set('models', models);
 app.set('utils', utils);
 app.set('views', path.join(__dirname, './views'));
